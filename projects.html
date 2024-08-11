@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Preetham Louis - Projects</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Preetham Louis</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="projects">
+        <h2>Best Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="Screenshot 2024-08-11 043527.png" alt="Face Recognition Application" class="project-img" onclick="openModal(this)">
+                <div class="project-info">
+                    <h3>Face Recognition Application using Python Flask</h3>
+                    <p class="grays">The Face Recognition app is designed to capture attendance roll numbers from images. Trained on student faces, it predicts whether a student's face is present in an attendance picture, saving time and utilizing the RF ML model.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="koursa1.png" alt="Koursa AI" class="project-img" onclick="openModal(this)">
+                <div class="project-info">
+                    <h3>Koursa AI</h3>
+                    <p class="grays">Koursa AI was trained on numerous course websites. It can find the best courses across all platforms using XGBoost, based on scraped data, making it the most optimal tool for course selection.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="Darm Mode.png" alt="Windows Essentials Software" class="project-img" onclick="openModal(this)">
+                <div class="project-info">
+                    <h3>Windows Essentials Software</h3>
+                    <p class="grays">Windows Essentials is a versatile custom installer tool for Windows. It can be kept updated and facilitates easy installation of multiple applications in one go.</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="Screenshot 2024-08-11 044207.png" alt="CNN Program Distraction Detector" class="project-img" onclick="openModal(this)">
+                <div class="project-info">
+                    <h3>CNN Program Distraction Detector</h3>
+                    <p class="grays">This distraction detector, trained on screenshots of distraction websites, monitors the screen for opened websites. It displays motivational quotes to help the user stay focused.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Fullscreen Image -->
+    <div id="image-modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <div id="caption"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

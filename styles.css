@@ -1,0 +1,725 @@
+/* Add Rocher font */
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+
+@font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 9;
+}
+
+@font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+}
+
+@font-palette-values --Mint {
+    font-family: Rocher;
+    base-palette: 7;
+}
+
+.grays {
+    font-palette: --Grays;
+}
+
+.purples {
+    font-palette: --Purples;
+}
+
+.mint {
+    font-palette: --Mint;
+    color: #98FF98; /* Mint color */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rocher', sans-serif;
+}
+
+body {
+    background-color: #121212; /* Slightly lighter black for better contrast */
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    background-color: #161616; /* Darker background */
+    border-bottom: 2px solid #FFD700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background-color: #1e1e1e; /* Slightly lighter on hover */
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #FFD700;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    color: #FFF700; /* Slightly different gold on hover */
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    font-size: 1.4rem;
+    color: white;
+    margin-left: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+    background-color: rgba(255, 215, 0, 0.2); /* Subtle gold background on hover */
+    border-radius: 0.5rem;
+}
+
+/* Skills Section */
+.skills {
+    padding: 5rem 2rem;
+    background-color: #1e1e1e; /* Darker background */
+    color: white;
+    text-align: center;
+    border-top: 2px solid #FFD700;
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Subtle shadow for depth */
+}
+
+.skills h2 {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.skills h2:hover {
+    color: #FFF700; /* Slightly different gold on hover */
+}
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Skill Card */
+.skill {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Skill Name */
+.skill-name {
+    font-size: 1.6rem;
+    color: purple; /* Purple color for skill names */
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.skill-name:hover {
+    color: #D3A9D5; /* Light purple on hover */
+}
+
+/* Highlighted Skills */
+.skill-python,
+.skill-blender,
+.skill-flask,
+.skill-aftereffects,
+.skill-htmlcss {
+    font-size: 1.8rem;
+    font-weight: 700; /* Bold for emphasis */
+}
+
+.skill-javascript {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.skill-more {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.skill-other {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* Progress Bars */
+.progress-bar {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 0.5rem;
+    height: 1.5rem; /* Increased height */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.progress {
+    background: #FFD700;
+    height: 100%;
+    border-radius: 0.5rem;
+    transition: width 0.5s ease;
+}
+
+/* Progress Bar Text */
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1.5rem; /* Adjusted to match the new height */
+    padding: 0 0.5rem;
+}
+
+/* Responsive Styles */
+@media(max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        margin-left: 1rem;
+    }
+
+    .skills h2 {
+        font-size: 2rem;
+    }
+
+    .skill-name {
+        font-size: 1.4rem;
+    }
+
+    .progress-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 480px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .skills {
+        padding: 3rem 1rem;
+    }
+
+    .skills h2 {
+        font-size: 1.8rem;
+    }
+
+    .skill-name {
+        font-size: 1.2rem;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
+/* Font Palettes */
+@font-face {
+    font-family: 'Rocher';
+    src: url('path/to/rocher-font.woff2') format('woff2'), /* Add your font path */
+         url('path/to/rocher-font.woff') format('woff'); /* Add your font path */
+}
+
+@font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 9;
+}
+
+@font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+}
+
+@font-palette-values --Mint {
+    font-family: Rocher;
+    base-palette: 7;
+}
+
+.grays {
+    font-palette: --Grays;
+}
+
+.purples {
+    font-palette: --Purples;
+}
+
+.mint {
+    font-palette: --Mint;
+    color: #98FF98; /* Mint color */
+}
+
+/* Education Section Styles */
+.education {
+    padding: 5rem 2rem;
+    background-color: #1e1e1e; /* Darker background */
+    color: white;
+    text-align: center;
+    border-top: 2px solid #FFD700;
+    border-radius: 1rem; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0,0,0,0.5); /* Subtle shadow for depth */
+    max-width: 1000px;
+    margin: 2rem auto;
+}
+
+.education h2 {
+    font-size: 2.5rem;
+    color: #FFD700;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.education h2:hover {
+    color: #FFF700; /* Slightly different gold on hover */
+}
+
+.education-section {
+    margin-bottom: 2rem;
+}
+
+.education-section h3 {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+.education-section p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.education-section .details {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.education-section .details dt {
+    font-weight: 700;
+    color: #FFD700;
+}
+
+.education-section .details dd {
+    margin-bottom: 1rem;
+    font-family: 'Rocher', sans-serif; /* Ensure the Rocher font is used */
+    color: #B0B0B0; /* Gray color for values */
+}
+
+.education-section .scores {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between rows */
+    margin: 2rem 0; /* Margin around the table */
+}
+
+.education-section .scores .score-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0; /* Vertical padding inside rows */
+}
+
+.education-section .scores .score-row div {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem; /* Padding inside each cell */
+    border: 1px solid #CCCCCC; /* Light gray border */
+    background-color: #2E2E2E; /* Slightly darker gray for better contrast */
+    color: #CCCCCC; /* Light gray text color */
+}
+
+.education-section .scores .score-row div:first-child {
+    font-weight: bold; /* Make the first column (CGPA/SGPA) bold */
+    color: #FFFFFF; /* White color for headers to stand out */
+}
+
+.education-section .scores table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.education-section .scores th,
+.education-section .scores td {
+    border: 1px solid #FFD700;
+    padding: 0.5rem;
+}
+
+.education-section .scores th {
+    background-color: #161616;
+}
+
+.education-section .scores td {
+    background-color: #1e1e1e;
+}
+
+.education-section .scores .highlight {
+    font-weight: 700;
+}
+
+.education-section .documents {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.education-section .documents a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.education-section .documents a:hover {
+    color: #FFF700;
+}
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #2e2e2e; /* Dark background */
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* Base font size for body */
+}
+
+/* Header */
+header {
+    background-color: #1e1e1e; /* Darker background for header */
+    padding: 15px; /* Increased padding for header */
+    text-align: center;
+}
+header .logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 28px; /* Increased font size for logo */
+}
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px; /* Increased margin for spacing */
+    font-size: 20px; /* Increased font size for nav links */
+}
+header nav a.active {
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Font Palettes */
+@font-face {
+    font-family: 'Rocher';
+    src: url('path/to/rocher-font.woff2') format('woff2'),
+         url('path/to/rocher-font.woff') format('woff');
+}
+
+@font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 9;
+}
+
+@font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+}
+
+@font-palette-values --Mint {
+    font-family: Rocher;
+    base-palette: 7;
+}
+
+.grays {
+    font-palette: --Grays;
+    color: #d0d0d0; /* Light gray for better readability */
+}
+
+.purples {
+    font-palette: --Purples;
+}
+
+.mint {
+    font-palette: --Mint;
+    color: #98FF98; /* Mint color */
+}
+
+/* Projects Section */
+/* Projects Section */
+.projects {
+    padding: 30px; /* Increased padding for section */
+}
+.projects h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px; /* Increased margin for spacing */
+    font-size: 32px; /* Increased font size for section title */
+}
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Reduced gap between projects */
+    justify-content: center;
+}
+.project {
+    background-color: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 250px; /* Reduced max width for smaller cards */
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Light shadow effect */
+}
+.project-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.project-img:hover {
+    opacity: 0.8; /* Slight fade effect */
+    transform: scale(1.02); /* Slight zoom effect */
+}
+.project-info {
+    padding: 15px; /* Reduced padding for better spacing */
+}
+.project-info h3 {
+    color: #ffffff;
+    font-size: 20px; /* Reduced font size for project titles */
+    margin: 0 0 10px 0; /* Margin adjustment */
+}
+.project-info p {
+    color: #b0b0b0; /* Gray text */
+    font-size: 16px; /* Reduced font size for descriptions */
+    margin: 0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px; /* Adjusted max-width for larger images */
+}
+.close {
+    color: #ffffff;
+    position: absolute;
+    top: 15px; /* Increased top positioning */
+    right: 30px; /* Increased right positioning */
+    font-size: 40px; /* Increased font size for close button */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #FFD700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    color: #fff;
+    padding: 15px 25px; /* Increased padding for caption */
+    text-align: center;
+    font-size: 20px; /* Increased font size for caption */
+}
+
+
+
+
+
+/* Font Palettes */
+@font-face {
+    font-family: 'Rocher';
+    src: url('path/to/rocher-font.woff2') format('woff2'),
+         url('path/to/rocher-font.woff') format('woff');
+}
+
+@font-palette-values --Grays {
+    font-family: Rocher;
+    base-palette: 9;
+}
+
+@font-palette-values --Purples {
+    font-family: Rocher;
+    base-palette: 6;
+}
+
+@font-palette-values --Mint {
+    font-family: Rocher;
+    base-palette: 7;
+}
+
+.grays {
+    font-palette: --Grays;
+    color: #d0d0d0; /* Light gray for better readability */
+}
+
+.purples {
+    font-palette: --Purples;
+}
+
+.mint {
+    font-palette: --Mint;
+    color: #98FF98; /* Mint color */
+}
+
+/* Default font and color for all text */
+body, h2, p {
+    font-family: 'Rocher', sans-serif;
+    color: #FFD700; /* Default gold color */
+}
+
+/* Contact Section */
+.contact {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+}
+
+.contact h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #333333;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Contact Details */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    background-color: #444444;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.contact-item h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Specific styles for email, phone, LinkedIn, and GitHub */
+.contact-item a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.contact-item a.email {
+    color: #d0d0d0; /* Gray color */
+    font-palette: --Purples; /* Use gray font palette */
+}
+
+.contact-item a.phone {
+    color: #d0d0d0; /* Gray color */
+    font-palette: --Grays; /* Use gray font palette */
+}
+
+.contact-item a.linkedin {
+    color: #d0d0d0; /* Gray color */
+    font-palette: --Grays; /* Use gray font palette */
+}
+
+.contact-item a.github {
+    color: #d0d0d0; /* Gray color */
+    font-palette: --Grays; /* Use gray font palette */
+}
